@@ -12,7 +12,6 @@ const categories = [
   { name: "Game Development" },
   { name: "Finance" },
   { name: "Photography" },
-  { name: "Gay Porn" },
 ];
 
 export const create = mutation({

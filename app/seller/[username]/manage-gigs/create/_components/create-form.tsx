@@ -49,13 +49,14 @@ const CreateFormSchema = z.object({
   category: z.string({
     required_error: "Please select a category.",
   }),
-  subcategory: z.string({
+  subcategoryId: z.string({
     required_error: "Please select a subcategory.",
   }),
 });
 
 type CreateFormValues = z.infer<typeof CreateFormSchema>;
 
+// This can come from your database or API.
 const defaultValues: Partial<CreateFormValues> = {
   title: "",
 };
@@ -87,7 +88,7 @@ export const CreateForm = ({ username }: CreateFormProps) => {
     mutate({
       title: data.title,
       description: "",
-      subcategory: data.subcategory,
+      subcategoryId: data.subcategoryId,
     })
       .then((gigId: Id<"gigs">) => {
         toast.info("Gig created successfully");
@@ -155,7 +156,7 @@ export const CreateForm = ({ username }: CreateFormProps) => {
         />
         <FormField
           control={form.control}
-          name="subcategory"
+          name="subcategoryId"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Subcategory</FormLabel>

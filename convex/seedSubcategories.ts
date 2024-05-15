@@ -81,7 +81,6 @@ const subcategories = [
   "Street Photography",
   "Fashion Photography",
   "Travel Photography",
-  // Add subcategories for other categories as needed
 ];
 
 export const create = mutation({
