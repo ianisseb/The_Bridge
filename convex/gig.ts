@@ -3,8 +3,6 @@ import { v } from "convex/values";
 import { internalMutation, mutation, query } from "./_generated/server";
 import { Id } from "./_generated/dataModel";
 
-// internal mutations - https://github.com/get-convex/convex-stripe-demo/blob/main/convex/payments.ts
-
 export const create = mutation({
   args: {
     title: v.string(),
