@@ -27,8 +27,10 @@ import { Loading } from "@/components/auth/loading";
 import { useQuery } from "convex/react";
 import { Filter, Heart, MessageCircle } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { ListItem } from "./list-item";
+// import { ListItem } from "./list-item";
 import { TooltipProvider } from "./tooltip-provider";
+import { ListItem } from "./list-item";
+import ConnectStripe from "./connect-stripe";
 
 const Navbar = () => {
   const categories = useQuery(api.categories.get);
@@ -135,6 +137,7 @@ const Navbar = () => {
             >
               Switch To Selling
             </Button>
+            {!currentUser.stripeAccountSetupComplete && <ConnectStripe />}
             <UserButton />
           </>
         )}
